@@ -19,6 +19,7 @@
 /  v0.8 - added lakes screens and filled in limits for each. Still need to add ability to scroll on these screens.
 /  v0.9 - added scrolling logic for lakes display;  added splash screen structure
 /  v1.0 - added splash screen and got buttons to scroll inside of lakes screen (must recalibrate once installed)
+/  v1.1 - updated recalibration, but still not great
 ////
 /
 /  Code support:  Tyler Browning
@@ -341,18 +342,6 @@ float readLoadCellWeight(float previousWeight) {
     Serial.print("Load_cell output val: ");
     Serial.println(calculatedLoad);
     t = millis();
-  }
-
-  //receive from serial terminal
-  if (Serial.available() > 0) {
-    float i;
-    char inByte = Serial.read();
-    if (inByte == 't') LoadCell.tareNoDelay();
-  }
-
-  //check if last tare operation is complete
-  if (LoadCell.getTareStatus() == true) {
-    Serial.println("Tare complete");
   }
 
   // return the calculated weight value
