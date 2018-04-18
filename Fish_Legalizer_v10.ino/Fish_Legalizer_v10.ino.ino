@@ -208,7 +208,7 @@ const GFXbitmapFont splashPageFont PROGMEM = {
 // GLOBAL VARIABLES
 float weight;  // holds the current weight value from the load cell
 long t = 0;        // holds timer value used in weight load cell calculations
-float loadCellCalibrationFactor = 102;  // used to calibrate the specific setup of this load cell.  Should be adjusted to achieve precise, controlled weight.
+float loadCellCalibrationFactor = 400;  // used to calibrate the specific setup of this load cell.  Should be adjusted to achieve precise, controlled weight. higher number= lower lb reading
 int scaleLoopBreak = 0;   // forces the display screen to update after weightLoopCount cycles when on the SCALE menu even if no buttons have been pressed
 int scaleLoopCounter = 0; // holds the number of current cycles through the loop function since last screen update
 
